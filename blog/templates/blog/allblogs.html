@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Matt Palmer</title>
+    <title>Matt Palmer— Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -49,7 +49,7 @@
                   <a class="nav-link" href="#">Resume</a> </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
+                  <a class="nav-link active" href="#">Blog </a>
                 </li>
               </ul>
             </div>
@@ -57,34 +57,25 @@
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
-    <div class="container">
-      <img src="media/images/img_avatar.jpg" style="max-width:150px; border-radius:150px; "> 
-      <h1 class="jumbotron-heading">Hi, I'm Matt</h1>
-      <p class="lead text-muted">Swarthmore College graduate & Debt Valuations Analyst at Chatham Financial. I love learning, working with new tools/tech, & personal development. </p>
-      <p>
-        <a href="mailto:m@ppal.me" class="btn btn-primary my-2">Reach out</a>
-      </p>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class='card-img-top' src='{{ job.image.url}}' width="100%" object-fit="cover" preserveAspectRatio="xMinYMin [slice]" role="img"/>
-            <div class="card-body">
-              <p class="card-text">{{ job.summary | safe }}</p>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
         
-</main>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Blog</h1>
+        </div>
+    </section>
+    <div class="col-md-8 blog-main" >
+        <h3 class="pb-4 mb-4 font-italic border-bottom">
+            Latest thoughts & musings.
+        </h3>
+
+        {% for blog in blogs.all %}
+        <div class="blog-post">
+            <h2 class="blog-post-title">{{ blog.title }}</h2>
+            <p class="blog-post-meta">{{ blog.pubdate}} by <a href="#">Matt</a></p>
+            {{ blog.body }}
+            </div>
+        {% endfor %}
+    </div>
 
 <footer class="text-muted">
   <div class="container">
