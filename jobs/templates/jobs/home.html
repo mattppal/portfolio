@@ -60,8 +60,9 @@
 
   <section class="jumbotron text-center">
     <div class="container">
+      <img src="media/images/img_avatar.jpg" style="max-width:150px; border-radius:150px; "> 
       <h1 class="jumbotron-heading">Hi, I'm Matt</h1>
-      <p class="lead text-muted">Swarthmore College graduate, Debt Valuations Analyst at Chatham Financial. I love learning, working with new tools/tech, & personal development. </p>
+      <p class="lead text-muted">Swarthmore College graduate & Debt Valuations Analyst at Chatham Financial. I love learning, working with new tools/tech, & personal development. </p>
       <p>
         <a href="mailto:m@ppal.me" class="btn btn-primary my-2">Reach out</a>
       </p>
@@ -74,9 +75,9 @@
         {% for job in jobs.all %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class='card-img-top' src='{{ job.image.url}}' width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" focusable="false" role="img"/>
+            <img class='card-img-top' src='{{ job.image.url}}' width="100%" object-fit="cover" preserveAspectRatio="xMinYMin [slice]" role="img"/>
             <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
+              <p class="card-text">{{ job.summary | safe }}</p>
               </div>
             </div>
           </div>
