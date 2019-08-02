@@ -71,8 +71,8 @@
         {% for blog in blogs.all %}
         <div class="blog-post">
             <h2 class="blog-post-title">{{ blog.title }}</h2>
-            <p class="blog-post-meta">{{ blog.pubdate}} by <a href="#">Matt</a></p>
-            {{ blog.body }}
+            <p class="blog-post-meta">{{ blog.pub_date_formatted}} by <a href="#">Matt</a></p>
+            {{ blog.summary }}
             </div>
         {% endfor %}
     </div>
