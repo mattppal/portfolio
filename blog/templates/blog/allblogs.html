@@ -74,7 +74,7 @@
                     {% for blog in blogs.all %}
                     <div class="blog-post">
                     <a href="{% url 'detail' blog.id %}"><h2 class="blog-post-title">{{ blog.title }}</h2></a>
-                    <p class="blog-post-meta">{{ blog.pub_date_formatted}} by </p>
+                    <p class="blog-post-meta">{{ blog.pub_date_formatted}} by Matt</p>
                     {{ blog.summary | safe }} . . .
                     </div>
                     </br>
