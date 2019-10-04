@@ -14,5 +14,3 @@ class Blog(models.Model):
 
     def pub_date_formatted(self):
         return self.pubdate.strftime('%b. %e, %Y')
-
-    
