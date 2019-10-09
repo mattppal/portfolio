@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from .models import Apps
 # Create your views here.
 
 def index(request):
-    return render(request, 'apps/index.html')
+    app = Apps.objects
+    return render(request, 'apps/index.html', {'apps':app})
 
 def quiz(request):
     return render(request, 'apps/quiz.html')
+
+def todo(request):
+    return render(request, 'apps/todo.html')

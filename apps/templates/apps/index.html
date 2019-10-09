@@ -49,13 +49,13 @@
                   <a class="nav-link" href="{%static 'PalmerCV.pdf'%}">Resume</a> </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="{% url 'allblogs'%}">Blog</a>
+                  <a class="nav-link" href="{% url 'allblogs'%}">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://twitter.com/mattpalmerr">Twitter</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'apps'%}">Apps</a>
+                  <a class="nav-link active" href="{% url 'apps'%}">Apps</a>
                 </li>
                </ul>
              </div>
@@ -67,26 +67,26 @@
             <h1 class="jumbotron-heading">Apps</h1>
         </div>
     </section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="blog-post">
-                    <h3 class="pb-4 mb-4 font-italic border-bottom">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-md-10 mx-auto">
+                  <div class="blog-post">
+                      <h3 class="pb-4 mb-4 font-italic border-bottom">
                       Recent projects
-                    </h3>
-                    {% for blog in blogs.all %}
-                    <div class="blog-post">
-                    <a href="{% url 'detail' blog.id %}"><h2 class="blog-post-title">{{ blog.title }}</h2></a>
-                    <p class="blog-post-meta">{{ blog.pub_date_formatted}} by Matt</p>
-                    {{ blog.summary | safe }} . . .
-                    </div>
-                    </br>
-                    {% endfor %}
-                    </br>
-                </div>
-            </div>
-        </div>
-    </div>
+                      </h3>
+                        {% for app in apps.all %}
+                        <div class="blog-post">
+                        <a href="{% url app.url %}"><h2 class="blog-post-title">{{ app.title }}</h2></a>
+                        <p class="blog-post-meta"></p>
+                        {{ app.summary | safe }}
+                        </div>
+                        </br>
+                        {% endfor %}
+                      </br>
+                  </div>
+              </div>
+          </div>
+      </div>
 </main>
 </br>
 <main role="main">
