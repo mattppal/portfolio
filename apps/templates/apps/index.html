@@ -7,13 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Matt Palmer</title>
+    <title>Matt Palmer— Apps</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 
     <style>
       .bd-placeholder-img {
@@ -37,61 +36,64 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand active" href="#">Matt Palmer</a>
+          <a class="navbar-brand active" href="#">Matt Palmer</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link active"  href="{% url 'home' %}">Home</a> </a>
-                  </li>
+                    <a class="nav-link"  href="{% url 'home' %}">Home</a> </a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{%static 'PalmerCV.pdf'%}">Resume</a> </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'allblogs'%}">Blog</a>
+                  <a class="nav-link active" href="{% url 'allblogs'%}">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://twitter.com/mattpalmerr">Twitter</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'apps'%}">Quiz</a>
+                  <a class="nav-link" href="{% url 'apps'%}">Apps</a>
                 </li>
-              </ul>
-            </div>
-          </nav>
-</header>
-
+               </ul>
+             </div>
+        </nav>
+     </header>
 <main role="main">
-
-  <section class="jumbotron text-center">
-    <div class="container">
-      <img src="{%static 'img_avatar.jpg' %}" style="max-width:150px; border-radius:150px; "> 
-      <h1 class="jumbotron-heading">Hi, I'm Matt</h1>
-      <p class="lead text-muted">Swarthmore College graduate & Debt Valuations Analyst at Chatham Financial. I love learning, working with new tools/tech, & personal development. </p>
-      <p>
-        <a href="mailto:m@ppal.me" class="btn btn-primary my-2">Reach out</a>
-      </p>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class='card-img-top' src='{{ job.image.url}}' width="100%" object-fit="cover" preserveAspectRatio="xMinYMin [slice]" role="img"/>
-            <div class="card-body">
-              <p class="card-text">{{ job.summary | safe }}</p>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Apps</h1>
         </div>
-        
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="blog-post">
+                    <h3 class="pb-4 mb-4 font-italic border-bottom">
+                      Recent projects
+                    </h3>
+                    {% for blog in blogs.all %}
+                    <div class="blog-post">
+                    <a href="{% url 'detail' blog.id %}"><h2 class="blog-post-title">{{ blog.title }}</h2></a>
+                    <p class="blog-post-meta">{{ blog.pub_date_formatted}} by Matt</p>
+                    {{ blog.summary | safe }} . . .
+                    </div>
+                    </br>
+                    {% endfor %}
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
+</br>
+<main role="main">
+        
+
+        
+    </div>
 
 <footer class="text-muted">
   <div class="container">
@@ -101,9 +103,10 @@
     <p> &copy; Matt Palmer, {% now "Y" %} </p>
   </div>
 </footer>
+</body>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 
 </html>
