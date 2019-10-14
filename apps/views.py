@@ -11,3 +11,6 @@ def quiz(request):
 
 def todo(request):
     return render(request, 'apps/todo.html')
+
+def weather(request):
+    return render(request, 'apps/weather.html')
