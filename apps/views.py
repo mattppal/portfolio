@@ -14,3 +14,6 @@ def todo(request):
 
 def weather(request):
     return render(request, 'apps/weather.html')
+
+def chat(request):
+    return render(request, 'apps/chat.html')
