@@ -25,7 +25,7 @@ SECRET_KEY = '4f@_h*y=biq)1i&-_eaqy@^_-s(0(xohbk!q&0dnv=#y#y)s%u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [".ppal.me", "165.22.176.97"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
